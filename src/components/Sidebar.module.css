@@ -18,6 +18,18 @@
     margin-top: calc(0px - 1.5rem - 6px); /* 0 = valor inicial menos metade da altura menos metade do border&outline */
 }
 
+.profile strong {
+    margin-top: 1rem;
+    color: var(--gray-100);
+    line-height: 1.6;
+}
+
+.profile span {
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+}
+
 .avatar {
     height: calc(3rem + 12px); /* 4 + 4 laterais border & 2 + 2 laterais outline */
     width: calc(3rem + 12px);
@@ -47,4 +59,12 @@
     align-items: center;
     justify-content: center;
 
+    gap: 0.5rem;
+
+    transition: color 0.1s, background 0.1s;
+}
+
+.sidebar footer a:hover {
+    background: var(--green-500);
+    color: var(--white);
 }
