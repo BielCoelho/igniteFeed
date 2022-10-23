@@ -2,27 +2,24 @@ import styles from "./Post.module.css";
 
 export function Post() {
   return (
-    <article>
+    <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
-            src="https://github.com/bielcoelho.png"
-          />
+          <img src="https://github.com/bielcoelho.png" />
           <div className={styles.authorInfo}>
             <strong>Gabriel Coelho</strong>
             <span>Web Developer</span>
           </div>
-          <time
-            title="Publicado 23 de outubro de 2022 ás 10:12"
-            dateTime="23-10-2022 10:12:30"
-          >
-            Publicado há 1h
-          </time>
         </div>
+        <time
+          title="Publicado 23 de outubro de 2022 ás 10:12"
+          dateTime="23-10-2022 10:12:30"
+        >
+          Publicado há 1h
+        </time>
       </header>
 
-      <div className={styles.postContent}>
+      <div className={styles.content}>
         <p>Fala galeraa 👋</p>
 
         <p>
@@ -30,10 +27,26 @@ export function Post() {
           no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
         </p>
 
-        <p>👉 <a href=''>jane.design/doctorcare</a></p>
+        <p>
+          👉 <a href="">jane.design/doctorcare</a>
+        </p>
 
-        <p><a href=''>#novoprojeto #nlw #rocketseat</a></p>
+        <p>
+          <a href="">#novoprojeto </a>
+          <a href="">#nlw </a>
+          <a href="">#rocketseat</a>
+        </p>
       </div>
+
+      <form className={styles.commentForm}>
+        <strong>Deixe seu feedback</strong>
+
+        <textarea placeholder="Deixe um comentário" />
+
+        <footer>
+          <button type="submit">Publicar</button>
+        </footer>
+      </form>
     </article>
   );
 }
