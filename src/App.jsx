@@ -14,9 +14,6 @@ export function App() {
     setTimeout(() => {
       setLoading(false);
     }, 1500);
-  }, []);
-
-  useEffect(() => {
     setTimeout(() => {
       setFinished(true);
     }, 2500);
