@@ -8,3 +8,18 @@
     gap: 2rem;
     align-items: flex-start;
 }
+
+.loading {
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+@media (max-width:768px) {
+    html {
+        font-size: 87,5%;
+    }
+
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
