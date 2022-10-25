@@ -34,8 +34,8 @@ export function App() {
       },
       content: [
         {type: 'paragraph', content:'Salve Salve.'},
-        {type: 'paragraph', content:' Estou usando da minha experiencia pra ajudar meu webamigo Biel, ele tá indo muito bem 🚀'},
-        {type: 'paragraph', content:' Espero que ele evolua muito, e pode contar comigo'},
+        {type: 'paragraph', content:' Estou de olho em você, acompanhando sua jornada 🚀'},
+        {type: 'paragraph', content:' Pode contar comigo 😎'},
       ],
       publishedAt: new Date('2022-10-20 20:00:00'),
     },

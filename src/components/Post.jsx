@@ -18,7 +18,7 @@ export function Post({ author, publishedAt, content }) {
   useEffect(() => {
 
     const fetchData = async () => {
-      const request = await api.get('?results=10&nat=us,br,fr,gb')
+      const request = await api.get('?results=20&nat=us,br,fr,gb')
 
       const dados = request.data.results.map(item => {
         return {
@@ -35,13 +35,7 @@ export function Post({ author, publishedAt, content }) {
     fetchData()
   }, []);
 
-  function randomizeUser(data) {
-    const howManyUsers = data.length
-    const randomIndex = Math.floor(Math.random() * howManyUsers)
-
-    return users[randomIndex]
-  }
-
+  
   const publishedDateFormatted = format(
     publishedAt,
     "dd 'de' LLLL 'de' u 'ás' HH:mm'h'",
@@ -55,10 +49,34 @@ export function Post({ author, publishedAt, content }) {
     addSuffix: true,
   });
 
-  const [comments, setComments] = useState(["Post muito bacana, hein?!"]);
+  const randomComment = [
+    " Post muito bacana, hein?! ",
+    " Foco no objetivo, força para lutar e fé para vencer. ",
+    " Positividade, cabeça erguida e um sorriso no rosto. ",
+    " Tenha em mente que ao fazer o bem, receberá o bem. ",
+    " Se jogue no que te faz sorrir. ",
+    " Tua vida é uma cópia impressa dos teus pensamentos. ",
+    " Pensamento positivo só leva a gente para frente. ",
+    " Seja otimista. Esta é a melhor forma de ver a vida. ",
+    " Bons pensamentos atraem acontecimentos magníficos. ",
+    " Se te faltar coragem, que te sobre loucura. ",
+    " Os sonhos antecedem as conquistas. ",
+    " Quem não tenta, não erra. Mas também não evolui. ",
+    " É proibida a entrada de más energias. ",
+    " A sua mente é o limite. ",
+    " O segredo é acreditar que tudo dará certo, porque vai! ",
+    " Se a oportunidade não bate, construa uma porta. ",
+    " Cada dia uma nova chance. ",
+    " Pensamento positivo é preciso! ",
+    " Comece acreditando que é possível. ",
+    " Acredite, há sempre um lado positivo em tudo que existe. "
+  ]
 
+  
+  const randomIndex = Math.floor(Math.random() * randomComment.length)
+  const [comments, setComments] = useState([randomComment[randomIndex]]);
   const [newCommentText, setNewCommentText] = useState("");
-
+  
   function handleNewCommentChange() {
     setNewCommentText(event.target.value);
     event.target.setCustomValidity("");
@@ -84,6 +102,7 @@ export function Post({ author, publishedAt, content }) {
   }
 
   const isNewCommentEmpty = newCommentText.length === 0;
+
 
   return (
     <article className={styles.post}>
@@ -140,7 +159,7 @@ export function Post({ author, publishedAt, content }) {
         {comments.map((comment) => {
           return (
             <Comment
-              key={data.id}
+              key={comment}
               content={comment}
               onDeleteComment={deleteComment}
               users={data}
