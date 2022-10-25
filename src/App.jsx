@@ -19,7 +19,8 @@ export function App() {
       },
       content: [
         {type: 'paragraph', content:'Fala galeraa 👋'},
-        {type: 'paragraph', content:' Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+        {type: 'paragraph', content:' Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat 🚀'},
+        {type: 'paragraph', content:' O projeto é o IgniteFeed '},
         {type: 'link', content:'jane.design/doctorcare'},
       ],
       publishedAt: new Date('2022-10-23 20:00:00'),
@@ -29,12 +30,12 @@ export function App() {
       author: {
         avatarUrl: 'https://github.com/KevinPagliuca.png',
         name: 'Kevin Pagliuca',
-        role: 'The guy teaching Gabriel'
+        role: 'Experienced Developer'
       },
       content: [
-        {type: 'paragraph', content:'Fala galeraa 👋'},
-        {type: 'paragraph', content:' Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
-        {type: 'link', content:'jane.design/doctorcare'},
+        {type: 'paragraph', content:'Salve Salve.'},
+        {type: 'paragraph', content:' Estou usando da minha experiencia pra ajudar meu webamigo Biel, ele tá indo muito bem 🚀'},
+        {type: 'paragraph', content:' Espero que ele evolua muito, e pode contar comigo'},
       ],
       publishedAt: new Date('2022-10-20 20:00:00'),
     },
