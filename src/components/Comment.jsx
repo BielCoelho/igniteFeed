@@ -31,7 +31,7 @@ export function Comment({ content, onDeleteComment, users }) {
                 title="Publicado 23 de outubro de 2022 ás 10:12"
                 dateTime="23-10-2022 10:12:30"
               >
-                Cerca de 1h atrás
+                {randomizedUser.country}
               </time>
             </div>
 

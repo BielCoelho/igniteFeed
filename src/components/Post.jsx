@@ -11,19 +11,20 @@ export function Post({ author, publishedAt, content }) {
   const [data, setData] = useState([{
     name: "Gabriel Coelho",
     id: 3253,
-    pic: "http://github.com/bielcoelho.png"
+    pic: "http://github.com/bielcoelho.png",
+    country: "Brasil"
   }])
 
   useEffect(() => {
 
     const fetchData = async () => {
-      const request = await api.get('?results=10')
+      const request = await api.get('?results=10&nat=us,br,fr,gb')
 
       const dados = request.data.results.map(item => {
         return {
           id: item.location.postcode,
           pic: item.picture.medium,
-          country: item.location.country,
+          country: (item.location.country == 'Brazil' ? 'Brasil' : item.location.country),
           name: `${item.name.first} ${item.name.last}`
         }
       })
