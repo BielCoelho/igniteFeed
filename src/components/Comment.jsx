@@ -1,9 +1,11 @@
 import { ThumbsUp, Trash } from "phosphor-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
 
 export function Comment({ content, onDeleteComment, users }) {
+
+
   const randomIndex = Math.floor(Math.random() * users.length);
 
   const [randomizedUser, setRandomizedUser] = useState(users[randomIndex]);
