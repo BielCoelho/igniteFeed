@@ -84,7 +84,7 @@ export function Post({ author, publishedAt, content }) {
 
   function handleCreateNewComment() {
     event.preventDefault();
-    setComments([...comments, newCommentText]);
+    setComments([newCommentText, ...comments]); //change the person when new comment is created
 
     setNewCommentText("");
   }
