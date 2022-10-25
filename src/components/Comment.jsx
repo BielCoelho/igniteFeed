@@ -1,13 +1,16 @@
 import { ThumbsUp, Trash } from "phosphor-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
 
-export function Comment({content, onDeleteComment}) {
+export function Comment({ content, onDeleteComment, users }) {
+  const randomIndex = Math.floor(Math.random() * users.length);
 
-  const [likeCount, setLikeCount] = useState(0)
+  const [randomizedUser, setRandomizedUser] = useState(users[randomIndex]);
 
-  function handleDeleteComment(comment) {
+  const [likeCount, setLikeCount] = useState(0);
+
+  function handleDeleteComment() {
     onDeleteComment(content);
   }
 
@@ -17,13 +20,13 @@ export function Comment({content, onDeleteComment}) {
 
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/bielcoelho.png" />
+      <Avatar hasBorder={false} src={randomizedUser.pic} />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Gabriel Coelho</strong>
+              <strong>{randomizedUser.name}</strong>
               <time
                 title="Publicado 23 de outubro de 2022 ás 10:12"
                 dateTime="23-10-2022 10:12:30"
