@@ -52,13 +52,13 @@ export function App() {
 
   return (
     <div className={loading ? styles.loading : null}>
-      {/* <Header /> */}
       <Splash loading={loading} />
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
           {posts.map(post => {
             return (<Post 
+              key={post.id}
               author={post.author}
               content={post.content}
               publishedAt={post.publishedAt}
