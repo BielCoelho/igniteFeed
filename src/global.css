@@ -19,6 +19,22 @@
   box-shadow: 0 0 0 2px var(--green-300);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background: #4A4A4A; 
+}
+
 * {
   padding: 0;
   margin: 0;
